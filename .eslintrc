@@ -14,7 +14,8 @@
     "no-unused-vars": "off",
     "no-trailing-spaces": "off",
     "max-len": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "valid-jsdoc": "off"
   },
   "extends": [
     "eslint:recommended",

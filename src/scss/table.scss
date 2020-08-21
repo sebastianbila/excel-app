@@ -8,62 +8,93 @@
   top: $header_height + $toolbar-height + $formula_height;
   overflow-x: auto;
   padding-bottom: 2px;
+}
 
-  &__row {
+.column {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  min-width: 40px;
+  width: $cell-width;
+  border: 1px solid $border-color;
+  border-top: 0;
+  border-left: 0;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  min-height: 20px;
+  height: $row-height;
+
+  &-info {
     display: flex;
-    flex-direction: row;
-    min-height: 20px;
-    height: $row-height;
-
-    &-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: $info-cell-width;
-      height: 100%;
-      border: 1px solid $border-color;
-      background: #f8f9fa;
-      border-top: 0;
-    }
-
-    &-data {
-      display: flex;
-
-      &-column {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #f8f9fa;
-        min-width: 40px;
-        width: $cell-width;
-        border: 1px solid $border-color;
-        border-top: 0;
-        border-left: 0;
-        height: 100%;
-      }
-
-      &-cell {
-        min-width: 40px;
-        padding: 5px;
-        width: $cell-width;
-        height: 100%;
-        border: 1px solid #e2e3e3;
-        border-top: 0;
-        border-left: 0;
-        color: #111;
-        white-space: nowrap;
-        outline: none;
-
-
-        &.selected-cell {
-          border: none;
-          outline: 2px solid #3c74ff;
-          z-index: 2;
-        }
-
-      }
-    }
+    justify-content: center;
+    align-items: center;
+    min-width: $info-cell-width;
+    height: 100%;
+    border: 1px solid $border-color;
+    background: #f8f9fa;
+    border-top: 0;
+    position: relative;
   }
 
+  &-data {
+    display: flex;
+  }
+}
 
+.cell {
+  min-width: 40px;
+  padding: 5px;
+  width: $cell-width;
+  height: 100%;
+  border: 1px solid #e2e3e3;
+  border-top: 0;
+  border-left: 0;
+  color: #111;
+  white-space: nowrap;
+  outline: none;
+
+
+  &.selected-cell {
+    border: none;
+    outline: 2px solid $primary-color;
+    z-index: 2;
+  }
+}
+
+.column-resize, .row-resize {
+  position: absolute;
+  bottom: 0;
+  background-color: $primary-color;
+  opacity: 0;
+  right: 0;
+  z-index: 1000;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+}
+
+.column-resize {
+  top: 0;
+  width: 2px;
+
+  &:hover {
+    cursor: col-resize;
+  }
+}
+
+.row-resize {
+  left: 0;
+  height: 4px;
+
+  &:hover {
+    cursor: row-resize;
+  }
 }
