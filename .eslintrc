@@ -15,7 +15,8 @@
     "no-trailing-spaces": "off",
     "max-len": "off",
     "operator-linebreak": "off",
-    "valid-jsdoc": "off"
+    "valid-jsdoc": "off",
+    "space-before-function-paren": "off"
   },
   "extends": [
     "eslint:recommended",
