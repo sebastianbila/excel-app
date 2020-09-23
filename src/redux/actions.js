@@ -1,4 +1,4 @@
-import {APPLY_STYLE, CHANGE_STYLES, CHANGE_TEXT, CHANGE_TITLE, TABLE_RESIZE} from './types';
+import {APPLY_STYLE, CHANGE_STYLES, CHANGE_TEXT, CHANGE_TITLE, TABLE_RESIZE, UPDATE_DATE} from './types';
 
 export function tableResize(data) {
     return {
@@ -36,3 +36,10 @@ export function changeTitle(data) {
         data
     }
 }
+
+export function updateDate() {
+    return {
+        type: UPDATE_DATE,
+    }
+}
+

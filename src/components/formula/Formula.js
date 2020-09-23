@@ -16,7 +16,12 @@ export class Formula extends ExcelComponent {
     toHTML() {
         return `
             <div class="excel__formula__info">fx</div>
-            <div id="formula" class="excel__formula__input" contenteditable="true" spellcheck="false"></div>
+            <div 
+            id="formula" 
+            class="excel__formula__input" 
+            contenteditable="true" 
+            spellcheck="false">
+            </div>
         `
     }
 

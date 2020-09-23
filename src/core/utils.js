@@ -36,13 +36,20 @@ export function toInlineStyles(styles = {}) {
 
 export function debounce(fn, wait) {
     let timeout
-    return function(...args) {
+    return function (...args) {
         const later = () => {
             clearTimeout(timeout)
             fn(...args)
-            // fn.apply(this, ...args)
         }
         clearTimeout(timeout)
         timeout = setTimeout(later, wait)
     }
+}
+
+export function clone(obj) {
+    return JSON.parse(JSON.stringify(obj))
+}
+
+export function preventDefault(event) {
+    event.preventDefault()
 }
