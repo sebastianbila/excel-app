@@ -2,8 +2,8 @@ import {storage} from '@core/utils';
 
 function toHtml(key) {
     const model = storage(key)
-    const id = key.split(';')[1]
-    return `
+    const id = key.split(':')[1]
+     return `
         <li class="content__record">
             <a href="#excel/${id}">${model.title}</a>
             <strong>
